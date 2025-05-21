@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Italian Brain Rot Infinity</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      background-color: #fff4e6;
+      color: #222;
+      overflow: hidden;
+    }
+
+    #wrapper {
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      animation: scroll 20s linear infinite;
+    }
+
+    .phrase {
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      border-bottom: 1px dashed #aaa;
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    @keyframes scroll {
+      0% { top: 0; }
+      100% { top: -100%; }
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="content"></div>
+  </div>
+
+  <script>
+    const phrases = [
+      "mammamia che pizza",
+      "bro ma che stai a dì",
+      "fratm ha crashato la nonna",
+      "pasta.exe has stopped working",
+      "ciao bello 😎",
+      "giga mozzarella moment",
+      "mamma ho visto un creeper IRL",
+      "🗿🗿🗿🗿🗿",
+      "parmesan overdrive initiated",
+      "sono in lag IRL",
+      "napoletan.exe non risponde",
+      "gondola speedrun",
+      "bro ha detto 'ciao' e ha crashato",
+      "stiamo vivendo in una lasagna dimensionale",
+      "latte macchiato supremacy",
+      "ha chiamato la polizia per il tiramisù sbagliato",
+      "il codice fiscale mi ha bannato",
+      "non è bug, è feature alla romana",
+      "mio zio lavora alla pizza hut segreta",
+      "sto vivendo nel meme italiano 4D"
+    ];
+
+    const content = document.getElementById("content");
+
+    function generateBrainRot() {
+      for (let i = 0; i < 100; i++) {
+        const div = document.createElement("div");
+        div.className = "phrase";
+        div.textContent = phrases[Math.floor(Math.random() * phrases.length)];
+        content.appendChild(div);
+      }
+
+      // Duplicate for seamless looping
+      const clone = content.cloneNode(true);
+      content.parentNode.appendChild(clone);
+    }
+
+    generateBrainRot();
+  </script>
+</body>
+</html>
